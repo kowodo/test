@@ -1,0 +1,159 @@
+% Created 2015-09-20 Ne 19:39
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{kowodo}
+\date{\today}
+\title{test}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.4.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Blbnuti}
+\label{sec-1}
+\begin{equation}
+x=\sqrt{b}
+\end{equation}
+
+If $a^2=b$ and \( b=2 \), then the solution must be
+either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+
+$\beta$ $\Omega$ 
+
+Ahoj$_{\text{dole}}$ Ahoj$_{\text{dole}}$
+Ahoj$^{\text{nahore}}$ Ahoj$^{\text{nahore}}$
+
+
+\href{http://www.randomwebsite.com/}{Best site I have ever seen}
+
+\href{https://www.seznam.cz/}{Neljepsi stranka co znam}
+
+\section{.emacs}
+\label{sec-2}
+
+\begin{verbatim}
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
+
+;;
+;; helm mode
+;;
+(require 'helm)
+(require 'helm-config)
+
+;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
+;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
+;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
+
+(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+      helm-ff-file-name-history-use-recentf t)
+
+(helm-mode 1)
+
+;;
+;; ace jump mode major function
+;;
+
+(eval-after-load "org"
+        '(define-key org-mode-map "\C-c " 'nil)) ; unmap key, was org-table-blank-field
+
+(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode-20140616.115")
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+
+;; 
+;; enable a more powerful jump back function from ace jump mode
+;;
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump back:-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+\end{verbatim}
+
+
+\section{nìjaký pøeklad}
+\label{sec-3}
+
+\begin{enumerate}
+\item Jedu vlakem.
+\item Ztratil jsem vlak.
+\item Ztratil jsem se ve vlaku.
+\item Ztratil jsem se v autì.
+\item Ztratil jsem se s autem.
+\item Ztratil jsem auto.
+\item Ztratil jsem letadlo.
+\item Ztratil jsem se v letadle.
+\item Ztratil jsem se s letadlem.
+\item Ztracen cestou do autobusu.
+\item Ztracen s autobusem.
+\item Ztracen v autobusu.
+\item Ztracený autobus.
+\item Zatracený kamarád.
+\item Zatracený pas dej kamarádovi.
+\item Budi¾ zatracen i s kamarádem.
+\item Zatracen pro kamaráda.
+\item Ztracen kamarádovi.
+\item Zaklínadlo o kamarádovi.
+\item Ztracen bez kamaráda.
+\item Ztracená kamarádka.
+\item Zaklínadlo o kamarádce.
+\item Obìtování bez kamarádky.
+\item Rituál s kamarádkou.
+\item Drogy dejte ke kamarádce.
+\item Jehla v pa¾i s kamarádkou.
+\end{enumerate}
+
+\section{ditaa}
+\label{sec-4}
+
+\includegraphics[width=.9\linewidth]{img/hello-world.png}
+% Emacs 24.4.1 (Org mode 8.2.10)
+\end{document}

@@ -1,0 +1,5 @@
+#+TITLE: Test1
+
+
+* linky
+[[file:test.org][odkaz na test.org]]
