@@ -1,8 +1,8 @@
-
 #+STARTUP: latexpreview
-#+STARTUP: latexpreview
+;;#+latex_compiler: xelatex
+;;#+latex_header: \usepackage{unicode-math}
 
-* Blbnuti
+* Latex a nice?
 \begin{equation}
 x=\sqrt{b}
 \end{equation}
@@ -10,15 +10,10 @@ x=\sqrt{b}
 If $a^2=b$ and \( b=2 \), then the solution must be
 either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
 
-\beta \Omega 
+\Omega \beta
 
 Ahoj_{dole} Ahoj_dole
 Ahoj^{nahore} Ahoj^nahore
-
-
-[[http://www.randomwebsite.com/][Best site I have ever seen]]
-
-[[https://www.seznam.cz/][Neljepsi stranka co znam]]
 
 
 
@@ -92,12 +87,12 @@ Ahoj^{nahore} Ahoj^nahore
 #+END_SRC
 
 
-* n�jak� p�eklad
+* nìjaký pøeklad
 
 1. Jedu vlakem.
 2. Ztratil jsem vlak.
 3. Ztratil jsem se ve vlaku.
-4. Ztratil jsem se v aut�.
+4. Ztratil jsem se v autì.
 5. Ztratil jsem se s autem.
 6. Ztratil jsem auto.
 7. Ztratil jsem letadlo.
@@ -106,20 +101,20 @@ Ahoj^{nahore} Ahoj^nahore
 10. Ztracen cestou do autobusu.
 11. Ztracen s autobusem.
 12. Ztracen v autobusu.
-13. Ztracen� autobus.
-14. Zatracen� kamar�d.
-15. Zatracen� pas dej kamar�dovi.
-16. Budi� zatracen i s kamar�dem.
-17. Zatracen pro kamar�da.
-18. Ztracen kamar�dovi.
-19. Zakl�nadlo o kamar�dovi.
-20. Ztracen bez kamar�da.
-21. Ztracen� kamar�dka.
-22. Zakl�nadlo o kamar�dce.
-23. Ob�tov�n� bez kamar�dky.
-24. Ritu�l s kamar�dkou.
-25. Drogy dejte ke kamar�dce.
-26. Jehla v pa�i s kamar�dkou.
+13. Ztracený autobus.
+14. Zatracený kamarád.
+15. Zatracený pas dej kamarádovi.
+16. Budi¾ zatracen i s kamarádem.
+17. Zatracen pro kamaráda.
+18. Ztracen kamarádovi.
+19. Zaklínadlo o kamarádovi.
+20. Ztracen bez kamaráda.
+21. Ztracená kamarádka.
+22. Zaklínadlo o kamarádce.
+23. Obìtování bez kamarádky.
+24. Rituál s kamarádkou.
+25. Drogy dejte ke kamarádce.
+26. Jehla v pa¾i s kamarádkou.
 * ditaa
 
 #+BEGIN_SRC ditaa :file img/hello-world.png
@@ -134,42 +129,376 @@ Ahoj^{nahore} Ahoj^nahore
 [[file:test1.org][odkaz na test1.org]]
 
 
-
-
-
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-ahsokdhf test khaosdf
-skahsodfh test oshdkfh 
-sokhfdo test okhsodf
-
 * text
 
-laksjdlfkjsa;dlfkjsldkfj alkdfj ;asdf ljsldf ;lkjldfa ;lksdf ;lkjdsf;
-lksjdf; la
+** 
 
-nejaka zmena
+** d
 
-zmena dva
+* python
+#+BEGIN_SRC python :results output
+print "hello"
+#+END_SRC
+
+#+RESULTS:
+: hello
+
+
+#+BEGIN_SRC python
+return "hello2"
+#+END_SRC
+
+#+RESULTS:
+: hello2
+
+
+#+BEGIN_SRC python :results output
+import math
+print 1 + 1 
+print  "ahoj " + str( math.sqrt(4))
+#+END_SRC
+
+#+RESULTS:
+: 2
+: ahoj 2.0
+
+* emacs-lisp
+ #+BEGIN_SRC emacs-lisp
+       (+ 1 2 3 4)
+     #+END_SRC
+
+ #+RESULTS:
+ : 10
+
+* Tabulka a graf z pythony
+#+tblname: data_table
+| a | 1 |
+| b | 2 |
+| c | 3 |
+
+#+begin_src python :var val=1 :var data=data_table
+# Return row specified by val.
+# In non-session mode, use return to return results.
+return(data[val])
+#+end_src
+
+#+RESULTS:
+| b | 2 |
+
+toto je zajímavé toto jsem udelal tak a tak.... 
+
+#+begin_src python :results file
+import matplotlib, numpy
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+fig=plt.figure(figsize=(4,2))
+x=numpy.linspace(-15,15)
+plt.plot(numpy.sin(x)/x)
+fig.tight_layout()
+plt.savefig('images/python-matplot-fig.png')
+return 'images/python-matplot-fig.png' # return filename to org-mode
+#+end_src
+
+#+RESULTS:
+[[file:images/python-matplot-fig.png]]
+
+
+* pdf tools
+#+BEGIN_SRC emacs-lisp
+(pdf-tools-install)
+#+END_SRC
+
+#+RESULTS:
+
+* dot
+
+** příklad z netu na vyzkoušení
+#+BEGIN_SRC dot :file images/dot_success.png :cmdline -Kdot -Tpng
+  digraph {
+  // graph from left to right
+  rankdir=LR;
+  splines=true;
+  node [shape=box];
+ 
+  id [label="Install Graphviz"]
+  conf [label="Configure org-babel"]
+  dot [label="DOT in org-mode"]
+ 
+  id -> conf
+  conf -> dot
+  dot -> "Profit"
+  dot -> "Success" [style=dotted]
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:images/dot_success.png]]
+
+
+
+
+
+** hraní si s grafy
+
+*** 
+#+BEGIN_SRC dot :file images/rzn_pokus_tabelau.png
+digraph "popisek hlavního grafu"{
+rankdir=TD;
+node [shape=record]
+
+prvni_node [label="{<f0>name of node |<f1> this is place \n for my math formula \n $ \in $ \n Yes LaTeX does not work here :(}"]
+druha_node [label="Lorem Ipsum"]
+
+A [label="illustration"]
+B [label="illustration"]
+C [label="illustration"]
+
+A -> {B C}
+
+prvni_node -> druha_node
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/rzn_pokus_tabelau.png]]
+
+*** 
+
+#+BEGIN_SRC dot :file images/strict.svg
+strict graph{
+       a--b
+       a--b
+       b--a [color=blue]
+}
+#+END_SRC     
+
+#+RESULTS:
+[[file:images/strict.svg]]
+
+*** 
+#+BEGIN_SRC dot :file images/vubec_nevim.svg
+digraph obj{
+        node[shape=record];
+        rankdir="BT";
+        
+        teacher [label = "{<f0> Teacher|<f1> \n  |<f2> \n   }"];
+        course [label = "{<f0> Course|<f1> \n  |<f2> \n   }"];
+        student [label = "{<f0> Student|<f1> \n  |<f2> \n   }"];
+        lesson [label = "{<f0> Lesson |<f1> \n  |<f2> \n   }"];
+        tutorial [label = "{<f0> Tutorial|<f1> \n  |<f2> \n   }"];
+        assessment[label = "{<f0> Assessment|<f1> \n  |<f2> \n   }"];
+        coursework [label = "{<f0> Coursework|<f1> \n  |<f2> \n   }"];
+        exam [label = "{<f0> Exam|<f1> \n  |<f2> \n   }"];
+
+        {rank=same; teacher course student}
+
+        teacher->course [dir="forward",arrowhead="none",arrowtail="normal",headlabel="1",taillabel="1.."];
+        student->course [dir="forward",arrowhead="none",arrowtail="normal",headlabel="1",taillabel="1.."];
+        lesson->course [dir="forward",arrowhead="diamond",arrowtail="normal"];
+        tutorial->course [dir="forward",arrowhead="diamond",arrowtail="normal"];
+        assessment->course [dir="forward",arrowhead="diamond",arrowtail="normal"];
+        coursework->assessment;
+        exam->assessment;
+
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/vubec_nevim.svg]]
+
+#+BEGIN_SRC dot :file images/pokus_matematicke_symboly.png :cmdline -Kdot -Tpng -Tpdf
+  digraph threevar {
+      rankdir=LR;
+      size="8,4";
+      node [fontsize=14 shape=box];
+      edge [fontsize=10];
+      center=1;
+      {rank=min k }
+      {rank=same X1 X2 X3 }
+      {rank=max z1 z2 z3 }
+      z1 [shape=circle label="d1 \n ⊤ ⊥ ∀ ℓ"];
+      z2 [shape=circle label="d2"];
+      z3 [shape=circle label="d3 \n ∄ ∃ ∃"];
+      k [label="? &#945; &#8707; &isin; &exist;" shape="ellipse"];
+      k -> X1 [label="?1 \in ∈ ∃ ⊢ ℜ ∀ "];
+      k -> X2 [label="?2"];
+      k -> X3 [label="?3"];
+      z1 -> X1;
+      z2 -> X2;
+      z3 -> X3;
+    }
+#+END_SRC
+
+#+RESULTS:
+[[file:images/pokus_matematicke_symboly.png]]
+
+** graf pro petra
+
+#+BEGIN_SRC dot :file images/petr.svg
+graph {
+0 -- 1
+1 -- 2
+0 -- 4
+3 -- 4
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/petr.svg]]
+
+** test grafu Hasseova diagramu
+
+*** 00
+#+BEGIN_SRC dot :file images/hasse_00.png :cmdline -Kdot -Tpng -Tpdf
+  digraph hasse_00 {
+
+      node [fontsize=10 shape=circle];
+      center=1;
+      rankdir=TD;
+      {rank=max; 23}
+      {rank=same; 13; 31}
+      {rank=min; 33}
+      l0 [shape="plaintext"];
+      l1 [shape="plaintext"];
+      l2 [shape="plaintext"];
+
+      l0->l1->l2 [style=invis];
+
+      33->33;
+      33->31;
+      33->23;
+      33->13;
+
+      31->31;
+      31->23;
+      31->13;
+
+      23->23;
+      23->13;
+
+      13->13;
+      
+    }
+#+END_SRC
+
+#+RESULTS:
+[[file:images/hasse_00.png]]
+
+*** 
+#+BEGIN_SRC dot :file images/hasse_01.png :cmdline -Kdot -Tpng -Tpdf
+  digraph hasse_00 {
+      rankdir=TD;
+      node [fontsize=14 shape=circle];
+      center=1;
+      {rank=min k }
+      {rank=same X1 X2 X3 }
+      {rank=max z1 z2 z3 }
+      z1 [shape=circle label="z1 \n ⊤ ⊥ ∀ ℓ"];
+      z2 [shape=circle label="z2"];
+      z3 [shape=circle label="z3 \n ∄ ∃ ∃"];
+      k [label="? &#945; &#8707; &isin; &exist;" shape="ellipse"];
+      k -> X1 [label="?1 \in ∈ ∃ ⊢ ℜ ∀ "];
+      k -> X2 [label="?2"];
+      k -> X3 [label="?3"];
+      z1 -> X1;
+      z2 -> X2;
+      z3 -> X3;
+      33->31 [shape=circle];
+      33->33 [shape=circle];
+    }
+#+END_SRC
+
+#+RESULTS:
+[[file:images/hasse_01.png]]
+
+* test latex unicode export
+Here are some symbols I have trouble exporting:
+
+ Unicode characters:
+
+ ℝ ℤ ℕ ⇒ ∈ ∀ 
+
+ Latex format:
+
+$$\Bbb{R} \Bbb{Z} \Bbb{N} \Rightarrow \in \forall$$
+
+* org tabulka
+| a | b | c |
+| 1 | 2 |   |
+#+TBLFM:
+
+** výpočty
+Zdroj: [[http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][Org as a spreadsheet system: a short introduction]]
+
+| Student  | Maths | Physics | Mean |
+|----------+-------+---------+------|
+| Bertrand |    13 |      09 |   11 |
+| Henri    |    15 |      14 | 14.5 |
+| Arnold   |    17 |      13 |   15 |
+#+TBLFM: $4=vmean($2..$3)
+
+
+| nazev                                  | dodavatel  | cena | mnozstvi | cena za 1g | cena 5g | cena 50g |
+|----------------------------------------+------------+------+----------+------------+---------+----------|
+| Long Jing Xi Hu nová sklizeň 2017 50g  | shengmu.cz |  238 |       50 |       4.76 |    23.8 |     238. |
+| Long Jing Xi Hu nová sklizeň 2016 500g | shengmu.cz | 1500 |      500 |          3 |      15 |      150 |
+| caj                                    | nedo       |  459 |      100 |       4.59 |   22.95 |    229.5 |
+#+TBLFM: $5=$3 / $4::$6=$5 * 5::$7=$5 * 50
+
+  
+* table for simon
+
+| this is table                        | values |
+|--------------------------------------+--------|
+| apples                               |      4 |
+| banannas                             |   2345 |
+| ;slkafj;lskdjf;lkdsajf;lskajflsakfdj |        |
+
+* table for Jirik
+| tabulka    | neco                               |
+|------------+------------------------------------|
+| anehodjfod | kdsjlfdf                           |
+| $$\sin x$$ | 34fkdjfakjdfkjdkfjdkjkfdjdfkjfkjfd |
+|            |                                    |
+* schedule test
+SCHEDULED: <2016-06-22 St>
+:LOGBOOK:  
+- Note taken on [2016-06-29 St 13:51] \\
+  dalsi test poznamka
+- Note taken on [2016-06-23 Čt 00:10] \\
+  poznámka. Koukal jsem na video od Rainer Koniga. Ukazuje tam Drawer
+  Logbook. Vypadá to moc pěkně.
+- Note taken on [2016-06-23 Čt 00:17] \\
+  tak co? už to pojede?
+:END:
+* 1 Test urovni 
+** 2
+*** 3
+**** 4
+***** 5
+****** 6
+******* 7
+******** 8
+********* 9
+********** 10
+*********** 11
+************ 12
+************* 13
+************** 14
+*************** 15
+**************** 16
+***************** 17
+****************** 18
+******************* 19
+******************** 20
+********************* 21
+********************** 22
+** TODO udelej neco
+:LOGBOOK:  
+- State "DONE"       from "TODO"       [2017-03-04 So 01:04]
+:END:      
+
+popis
+* odkaz na soubor
+[[file:test1.org][odkaz na soubor test1.org nekde]]
+
