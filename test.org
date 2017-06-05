@@ -235,6 +235,8 @@ return 'images/python-matplot-fig.png' # return filename to org-mode
 [[file:images/dot_success.png]]
 
 
+[[file:images/dot_success.png]]
+
 
 
 
