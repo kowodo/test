@@ -431,6 +431,8 @@ $$\Bbb{R} \Bbb{Z} \Bbb{N} \Rightarrow \in \forall$$
 
 ** výpočty
 Zdroj: [[http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][Org as a spreadsheet system: a short introduction]]
+[[http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][Org as a spreadsheet system: a short introduction]]
+[[https://stackoverflow.com/questions/6688075/permanently-summing-a-column-in-an-org-mode-table][emacs - Permanently summing a column in an Org-mode table - Stack Overflow]]
 
 | Student  | Maths | Physics | Mean |
 |----------+-------+---------+------|
